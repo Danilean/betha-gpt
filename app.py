@@ -1,10 +1,11 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import requests
 import json
 
 app = Flask(__name__)
 
-API_KEY = "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"
+API_KEY = os.getenv('OPENAI_API_KEY')
 URL = "https://api.openai.com/v1/chat/completions"
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
